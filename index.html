@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookshelf Apps</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="head">
+        <h1 class="head-title">Bookshelf App</h1>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="cntnt-kiri">
+        <div class="logo">
+          <img class="logo-img" src="assets/img/logo.jpg" alt="Logo" />
+        </div>
+        <div class="total-book">
+          <table>
+            <tr>
+              <th>Jumlah Buku</th>
+              <td id="jumlah"></td>
+            </tr>
+            <tr>
+              <th>Selesai dibaca</th>
+              <td id="selesai"></td>
+            </tr>
+            <tr>
+              <th>Belum selesai dibaca</th>
+              <td id="belum"></td>
+            </tr>
+          </table>
+        </div>
+        <div id="btn-add" class="btn-add">
+          <button class="addBook">TAMBAH BUKU</button>
+        </div>
+      </div>
+
+      <div class="cntnt-kanan">
+        <div class="searchBook">
+          <input id="searchBookTitle" type="text" placeholder="Masukkan judul buku yang ingin dicari" required />
+        </div>
+
+        <div class="container-buku">
+          <section class="book_shelf">
+            <h3>Belum selesai dibaca</h3>
+            <div id="incompleteBookshelfList" class="book_list"></div>
+          </section>
+
+          <section class="book_shelf">
+            <h3>Selesai dibaca</h3>
+            <div id="completeBookshelfList" class="book_list"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- POPUP -->
+    <div class="popup" id="popup-input">
+      <div class="close-btn" id="close-input">&times;</div>
+      <h2>Masukkan Buku Baru</h2>
+      <form id="inputBook">
+        <div class="input">
+          <input id="inputBookTitle" type="text" placeholder="Judul" required />
+        </div>
+        <div class="input">
+          <input id="inputBookAuthor" type="text" placeholder="Penulis" required />
+        </div>
+        <div class="input">
+          <input id="inputBookYear" type="number" placeholder="Tahun" required />
+        </div>
+        <div class="input_inline">
+          <label for="inputBookIsComplete">Selesai dibaca</label>
+          <input id="inputBookIsComplete" type="checkbox" />
+        </div>
+        <div class="cntainer-submit">
+          <button id="bookSubmit" type="submit" class="btn-submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
+        </div>
+      </form>
+    </div>
+
+    <!-- POPUP EDIT -->
+
+    <div class="popup" id="popup-edit">
+      <div class="close-btn" id="close-edit">&times;</div>
+      <h2>Edit Buku</h2>
+      <form id="inputEdit" class="inputForm">
+        <div class="input">
+          <input id="editTitle" type="text" placeholder="Judul" required />
+        </div>
+        <div class="input">
+          <input id="editAuthor" type="text" placeholder="Penulis" required />
+        </div>
+        <div class="input">
+          <input id="editYear" type="number" placeholder="Tahun" required />
+        </div>
+
+        <button id="submitEdited" class="btn-submit" type="submit">Simpan Perubahan</button>
+      </form>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
